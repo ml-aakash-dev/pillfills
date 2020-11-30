@@ -1,0 +1,25 @@
+.header{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.header .bgimg{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../../assets/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.header .wrapper {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+  }
