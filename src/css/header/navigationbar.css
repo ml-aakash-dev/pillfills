@@ -1,0 +1,11 @@
+.navbar{
+    padding: 0;
+    padding: 10px 130px;
+}
+.navbar .navbar-brand{
+    font-size: 40px;
+}
+.navbar .navbar-brand span{
+    font-size: 15px;
+    line-height: 15px;
+}
