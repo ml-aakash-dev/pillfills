@@ -18,22 +18,10 @@
 .header .wrapper {
     position: absolute;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-  }
-  .header .top-bar{
-      background-color: #228be6;
-      padding: 5px 100px;
-  }
-  .header .top-bar a{
-      color: white;
-      text-decoration: none;
-      margin-left: 30px;
-  }
-  .header .top-bar a .icon{
-      margin-right: 10px;
   }
 
   .header .content{
@@ -42,11 +30,31 @@
     top: 50%;
     transform: translateY(-50%);
     margin-left: 130px;
+    width: 100%;
+    /* min-height: 100%; */
+    color: white;
+    padding-top: 10px;
 }
 .header .content h1{
     font-size: 60px;
     font-weight: 700;
+}
+.header .content .appointment{
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
     color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: .3s;
+}
+.header .content .appointment:hover{
+    background-color: #228be6;
+    border: 2px solid #228be6;
 }
 
 .header .content h1 span{
@@ -54,20 +62,16 @@
 }
 
 @media(max-width: 600px){
-    .header .top-bar{
-        padding: 0;
-    }
-    .header .top-bar a{
-        display: inline-block;
-        margin: 10px 30px;
-    }
     .header .content{
-        margin-left: 30px;
+        margin-left: 10px;
     }
     
     .header .content h1{
         font-size: 40px;
         font-weight: 700;
         color: white;
+    }
+    .header .content .appointment{
+        font-size: 15px;
     }
 }

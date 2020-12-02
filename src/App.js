@@ -1,11 +1,19 @@
+import React from 'react'
 import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Body from './components/Body'
+import Appointment from './components/appointment/Appointment'
 
 function App() {
   return (
-    <div className="App">
-          <Body />
-    </div>
+    <React.Fragment>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Body}/>
+          <Route exact path="/appointment/" component={Appointment}/>
+        </Switch>
+      </Router>
+    </React.Fragment>
   );
 }
 

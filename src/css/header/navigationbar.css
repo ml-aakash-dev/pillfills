@@ -4,8 +4,65 @@
 }
 .navbar .navbar-brand{
     font-size: 40px;
+    font-weight: 700;
 }
-.navbar .navbar-brand span{
-    font-size: 15px;
-    line-height: 15px;
+.navbar .navbar-brand small {
+    display:block;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar a.nav-link{
+      color: white !important;
+      font-size: 20px;
+      font-weight: 700;
+  }
+  
+  .navigationbar .top-bar{
+    background-color: #228be6;
+    padding: 5px 100px;
 }
+.navigationbar .top-bar a{
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+}
+.navigationbar .top-bar a .icon{
+    margin-right: 10px;
+}
+
+@media(max-width:600px){
+    
+    .navigationbar .top-bar{
+        padding: 0;
+    }
+    .navigationbar .top-bar a{
+        display: inline-block;
+        margin: 10px 10px;
+    }
+}
+
+  @media(max-width:576px){
+    .navbar{
+        padding: 0;
+        padding: 10px 10px;
+    }
+      
+    .navbar .navbar-brand{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .navbar .navbar-brand small {
+        display:block;
+        font-size: 12px;
+        /* font-weight: 600; */
+        /* letter-spacing: 1.5px; */
+    }
+
+    .navbar a.nav-link{
+        color: white !important;
+        font-size: 12px;
+        font-weight: 700;
+    }
+  }
