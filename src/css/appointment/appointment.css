@@ -35,6 +35,8 @@
 }
 
 .ma-appointment .form{
+    width: 80%;
+    margin: auto;
     padding: 50px 130px;
 }
 .ma-appointment .send{
