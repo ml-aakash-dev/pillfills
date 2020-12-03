@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Body from './components/Body'
 import Appointment from './components/appointment/Appointment'
+import TestForm from './components/TestForm'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Body}/>
           <Route exact path="/appointment/" component={Appointment}/>
+          <Route exact path="/test-form/" component={TestForm}/>
         </Switch>
       </Router>
     </React.Fragment>

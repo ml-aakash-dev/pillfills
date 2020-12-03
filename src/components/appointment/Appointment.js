@@ -9,6 +9,44 @@ import Navigationbar from '../header/Navigationbar'
 import '../../css/appointment/appointment.css'
 
 class Appointment extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            location: "",
+            phone: "",
+            date: "",
+            time: "",
+            error: ""
+        }
+    }
+
+    handleChange = e => {
+        this.setState({
+            [e.target.name] : e.target.value 
+        })
+    }
+    // handleSubmit = e => {
+    //     // e.preventDefault()
+    //     // var number = document.getElementById('ap-phone').value
+    //     // if(this.state.phone!== /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/){
+    //     //     this.setState({
+    //     //         error: "please enter the right number"
+    //     //     })
+    //     // }
+        
+    //     // reset the fields
+    //     this.resetForm()
+    // }
+    // resetForm(){
+    //     document.getElementById('ap-form').reset();
+    //     this.setState({
+    //         location: "",
+    //         phone: "",
+    //         date: "",
+    //         time: "",
+    //         error: ""
+    //     })
+    // }
     render() {
         return (
             <div className="ma-appointment">
@@ -20,12 +58,12 @@ class Appointment extends Component {
                         </div>
                     </div>
                 </div>
-                <Form id="contact-form" className="form">
+                <Form id="ap-form" className="form">
                     <Form.Group>
                         <Form.Label>Preferred Testing Location</Form.Label>
-                        <Form.Control as="select"
+                        <Form.Control as="select" name="location"
                         required="required">
-                            <option>Select a Location</option>
+                            <option disabled selected  value="">Select a Location</option>
                             <option>Lansing, IL</option>
                             <option>Chicago Heights, IL</option>
                             <option>Joliet, IL</option>
@@ -34,9 +72,12 @@ class Appointment extends Component {
                     <Form.Group>
                         <Form.Label>Phone</Form.Label>
                         <Form.Control
+                        id="ap-phone"
                         type="phone"
                         name="phone"
                         required="required"
+                        placeholder="(708) 555-1212"
+                        pattern="\(\d{3}\)[ ]?\d{3}[-]?\d{4}"
                         onChange={this.handleChange}
                         />
                     </Form.Group>
@@ -55,8 +96,9 @@ class Appointment extends Component {
                         <Col md={6}>
                         <Form.Group>
                             <Form.Label>Preferred Testing Time</Form.Label>
-                            <Form.Control as="select"
+                            <Form.Control as="select" name="time"
                             required="required">
+                                <option disabled selected value="">Select Time</option>
                                 <option>10:00 AM</option>
                                 <option>10:30 AM</option>
                                 <option>11:00 AM</option>
