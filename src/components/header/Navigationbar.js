@@ -39,7 +39,7 @@ class Navigationbar extends Component {
   }
     render() {
       if(this.state.logout){
-        window.location = "http://localhost:3000/"
+        window.location = "/"
     }
         return (
         <div className="navigationbar">
