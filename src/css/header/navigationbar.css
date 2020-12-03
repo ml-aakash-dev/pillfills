@@ -65,4 +65,10 @@
         font-size: 12px;
         font-weight: 700;
     }
+    .navigationbar .bottom-bar{
+        padding: 10px;
+    }
+    .navigationbar .bottom-bar p{
+        font-size: 12px;
+    }
   }

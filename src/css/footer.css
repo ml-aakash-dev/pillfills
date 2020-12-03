@@ -1,0 +1,25 @@
+
+.footer .bottom-bar{
+    background-color: #228be6;
+    padding: 10px 100px;
+    /* position: absolute;
+    bottom: 0;
+    left: 0; */
+    width: 100%;
+    text-align: right;
+}
+.footer .bottom-bar p{
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    margin: 0;
+}
+
+@media(max-width:576px){
+    .footer .bottom-bar{
+        padding: 10px;
+    }
+    .footer .bottom-bar p{
+        font-size: 12px;
+    }
+  }

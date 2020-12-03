@@ -15,7 +15,8 @@ class Login extends Component {
             password: '',
             error: '',
             msg: '',
-            testUser: false
+            testUser: false,
+            testViewer: false
         }
         this.onChange = this.onChange.bind(this)
     }
@@ -44,6 +45,12 @@ class Login extends Component {
             testUser: !this.state.testUser
         })
         }
+        else if(this.state.user==="testviewer" && this.state.password==="test123"){
+            localStorage.setItem("token", "daygcfjadsfjhabaksjdhk")
+            this.setState({
+                testViewer: !this.state.testViewer
+            })
+            }
         else{
             this.setState({
                 loggedin: false,
@@ -56,6 +63,10 @@ class Login extends Component {
     render() {
         if(this.state.testUser){
             return <Redirect to="/test-form/" />
+        }
+        
+        if(this.state.testViewer){
+            return <Redirect to="/test-data/" />
         }
         return (
                 <Modal 

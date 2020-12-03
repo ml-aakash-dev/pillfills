@@ -5,6 +5,7 @@ import {
 } from 'react-bootstrap';
 
 import Navigationbar from '../header/Navigationbar'
+import Footer from '../Footer'
 
 import '../../css/appointment/appointment.css'
 
@@ -17,6 +18,47 @@ class Appointment extends Component {
             date: "",
             time: "",
             error: ""
+        }
+    }
+    componentDidMount(){
+        Array.prototype.forEach.call(document.body.querySelectorAll("*[data-mask]"), applyDataMask);
+
+        function applyDataMask(field) {
+            var mask = field.dataset.mask.split('');
+            
+            // For now, this just strips everything that's not a number
+            function stripMask(maskedData) {
+                function isDigit(char) {
+                    return /\d/.test(char);
+                }
+                return maskedData.split('').filter(isDigit);
+            }
+            
+            // Replace `_` characters with characters from `data`
+            function applyMask(data) {
+                return mask.map(function(char) {
+                    if (char !== '_') return char;
+                    if (data.length === 0) return char;
+                    return data.shift();
+                }).join('')
+            }
+            
+            function reapplyMask(data) {
+                return applyMask(stripMask(data));
+            }
+            
+            function changed() {   
+                var oldStart = field.selectionStart;
+                var oldEnd = field.selectionEnd;
+                
+                field.value = reapplyMask(field.value);
+                
+                field.selectionStart = oldStart;
+                field.selectionEnd = oldEnd;
+            }
+            
+            field.addEventListener('click', changed)
+            field.addEventListener('keyup', changed)
         }
     }
 
@@ -77,6 +119,7 @@ class Appointment extends Component {
                         name="phone"
                         required="required"
                         placeholder="(708) 555-1212"
+                        data-mask="(___) ___-____"
                         pattern="\(\d{3}\)[ ]?\d{3}[-]?\d{4}"
                         onChange={this.handleChange}
                         />
@@ -122,6 +165,7 @@ class Appointment extends Component {
                         <button className="btn btn-outline-light send" type="submit" onClick={this.handleSubmit}>Set Appointment</button>
                     </Form.Group>
                 </Form>
+                <Footer />
             </div>
         )
     }
