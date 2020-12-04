@@ -103,9 +103,9 @@ class Appointment extends Component {
                 <Form id="ap-form" className="form">
                     <Form.Group>
                         <Form.Label>Preferred Testing Location</Form.Label>
-                        <Form.Control as="select" name="location"
+                        <Form.Control as="select" name="location" defaultValue={'DEFAULT'}
                         required="required">
-                            <option disabled selected  value="">Select a Location</option>
+                            <option disabled value="DEFAULT">Select a Location</option>
                             <option>Lansing, IL</option>
                             <option>Chicago Heights, IL</option>
                             <option>Joliet, IL</option>
@@ -139,9 +139,9 @@ class Appointment extends Component {
                         <Col md={6}>
                         <Form.Group>
                             <Form.Label>Preferred Testing Time</Form.Label>
-                            <Form.Control as="select" name="time"
+                            <Form.Control as="select" name="time" defaultValue={'DEFAULT'}
                             required="required">
-                                <option disabled selected value="">Select Time</option>
+                                <option disabled value="DEFAULT">Select Time</option>
                                 <option>10:00 AM</option>
                                 <option>10:30 AM</option>
                                 <option>11:00 AM</option>

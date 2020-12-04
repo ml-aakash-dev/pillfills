@@ -87,7 +87,16 @@ class TestForm extends Component {
                         onChange={this.handleChange}
                         />
                     </Form.Group> 
-                    
+                    <Form.Group>
+                        <Form.Label>Preferred Testing Location</Form.Label>
+                        <Form.Control as="select" name="location" defaultValue={'DEFAULT'}
+                        required="required">
+                            <option disabled value="DEFAULT">Select a Location</option>
+                            <option>Lansing, IL</option>
+                            <option>Chicago Heights, IL</option>
+                            <option>Joliet, IL</option>
+                        </Form.Control>
+                    </Form.Group>
                     <Form.Group>
                         <Form.Label>Upload Driver's License</Form.Label>
                         <Form.Control
